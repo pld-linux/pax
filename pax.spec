@@ -2,20 +2,19 @@ Summary:	POSIX File System Archiver
 Summary(pl):	Archiwizer plików POSIX
 Name:		pax
 Version:	1.5
-Release:	3
+Release:	4
 License:	BSD
 Group:		Applications/Archiving
 Group(de):	Applikationen/Archivierung
 Group(pl):	Aplikacje/Archiwizacja
-Source0:	%{name}_%{version}-2.tar.gz
-# this file comes from slink, which no longer exists:
-#Source0:	ftp://ftp.debian.org/debian/dists/slink/main/source/%{name}_%{version}-2.tar.gz
-# newer debian-patched version:
-#Source0:	ftp://ftp.debian.org/debian/dists/potato/main/source/%{name}_%{version}-8.tar.gz
+# debian version:
+Source0:	ftp://ftp.debian.org/debian/pool/main/p/%{name}_%{version}.orig.tar.gz
 # or original(?) archive from 1997:
-#Source0:	http://www.netsw.org/system/tools/fileutils/archive/meta/%{name}-%{version}.tar.gz
-Patch0:		%{name}-1.5-rh.patch
-Patch1:		%{name}-1.5-time.patch
+# Source0:	http://www.netsw.org/system/tools/fileutils/archive/meta/%{name}-%{version}.tar.gz
+# Patch0:		%{name}-1.5-rh.patch
+# Patch1:		%{name}-1.5-time.patch
+Patch0:		ftp://ftp.debian.org/debian/pool/main/p/%{name}_%{version}-12.diff.gz
+Patch1:		%{name}-DESTDIR_over_debian.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,9 +27,9 @@ Obs³uguje dwie najczê¶ciej wystêpuj±ce na uniksach postaci archiwów:
 CPIO i TAR.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}.orig
 %patch0 -p1
-%patch1 -p1
+%patch1 -p0
 
 %build
 %{__make}
