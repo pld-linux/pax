@@ -7,6 +7,7 @@ License:	BSD
 Group:		Applications/Archiving
 # debian version:
 Source0:	ftp://ftp.debian.org/debian/pool/main/p/%{name}_%{version}.orig.tar.gz
+# Source0-md5:	fc391481339c8222f40afae21b1188da
 # or original(?) archive from 1997:
 # Source0:	http://www.netsw.org/system/tools/fileutils/archive/meta/%{name}-%{version}.tar.gz
 # Patch0:		%{name}-1.5-rh.patch
