@@ -5,8 +5,6 @@ Version:	1.5
 Release:	4
 License:	BSD
 Group:		Applications/Archiving
-Group(de):	Applikationen/Archivierung
-Group(pl):	Aplikacje/Archiwizacja
 # debian version:
 Source0:	ftp://ftp.debian.org/debian/pool/main/p/%{name}_%{version}.orig.tar.gz
 # or original(?) archive from 1997:
