@@ -2,7 +2,7 @@ Summary:	POSIX File System Archiver
 Summary(pl):	Archiwizer plików POSIX
 Name:		pax
 Version:	1.5
-Release:	5
+Release:	6
 License:	BSD
 Group:		Applications/Archiving
 # debian version:
