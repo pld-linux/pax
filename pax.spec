@@ -2,7 +2,7 @@ Summary:	POSIX File System Archiver
 Summary(pl):	Archiwizer plików POSIX
 Name:		pax
 Version:	1.5
-Release:	4
+Release:	5
 License:	BSD
 Group:		Applications/Archiving
 # debian version:
@@ -30,18 +30,22 @@ CPIO i TAR.
 %patch1 -p0
 
 %build
-%{__make}
+%{__make} \
+	CFLAGS="%{rpmcflags} -Wall -DNET2_STAT -D_PATH_DEFTAPE=\\\"/dev/rmt0\\\" -DLINUX -D_GNU_SOURCE"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
-%{__make} install bindir=$RPM_BUILD_ROOT%{_bindir} mandir=$RPM_BUILD_ROOT%{_mandir}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+
+%{__make} install \
+	bindir=$RPM_BUILD_ROOT%{_bindir} \
+	mandir=$RPM_BUILD_ROOT%{_mandir}
 
 %clean
-rm -rf %{buildroot}
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc debian/copyright
 %attr(755,root,root) %{_bindir}/pax
 %{_mandir}/man1/*
