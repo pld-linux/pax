@@ -1,0 +1,67 @@
+diff -ur Makefile Makefile
+--- Makefile	Thu Jan 24 00:12:21 2002
++++ Makefile	Thu Jan 24 00:08:17 2002
+@@ -6,10 +6,13 @@
+ MAN=	pax.1
+ 
+ CFLAGS= -Wall -O2 -g\
+-	-DNET2_STAT -D_PATH_DEFTAPE=\"/dev/rmt0\" -DDEBIAN -D_GNU_SOURCE
++	-DNET2_STAT -D_PATH_DEFTAPE=\"/dev/rmt0\" -DLINUX -D_GNU_SOURCE
+ 
+ prefix=/usr/local
+ 
++bindir=$(DESTDIR)$(prefix)/bin
++mandir=$(DESTDIR)$(prefix)/share/man
++
+ pax:	$(OBJS)
+ 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIBS)
+ 
+@@ -20,6 +23,6 @@
+ 	$(RM) $(PROG)
+ 
+ install:
+-	install -d -m 755 $(prefix)/bin $(prefix)/share/man/man1
+-	install -s -m 755 $(PROG) $(prefix)/bin
+-	install    -m 644 $(MAN)  $(prefix)/share/man/man1
++	install -d -m 755 $(bindir) $(mandir)/man1
++	install -s -m 755 $(PROG) $(bindir)
++	install    -m 644 $(MAN)  $(mandir)/man1
+diff -ur cache.c cache.c
+--- cache.c	Thu Jan 24 00:12:21 2002
++++ cache.c	Thu Jan 24 00:08:17 2002
+@@ -231,7 +231,7 @@
+ 	 * No entry for this uid, we will add it
+ 	 */
+ 	if (!pwopn) {
+-#ifdef DEBIAN
++#ifdef LINUX
+ 		setpwent();
+ #else
+ 		setpassent(1);
+@@ -313,7 +313,7 @@
+ 	 * No entry for this gid, we will add it
+ 	 */
+ 	if (!gropn) {
+-#ifdef DEBIAN
++#ifdef LINUX
+ 		setgrent();
+ #else
+ 		setgroupent(1);
+@@ -396,7 +396,7 @@
+ 	}
+ 
+ 	if (!pwopn) {
+-#ifdef DEBIAN
++#ifdef LINUX
+ 		setpwent();
+ #else
+ 		setpassent(1);
+@@ -470,7 +470,7 @@
+ 	}
+ 
+ 	if (!gropn) {
+-#ifdef DEBIAN
++#ifdef LINUX
+ 		setgrent();
+ #else
+ 		setgroupent(1);
