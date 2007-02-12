@@ -1,5 +1,5 @@
 Summary:	POSIX File System Archiver
-Summary(pl):	Archiwizer plików POSIX
+Summary(pl.UTF-8):   Archiwizer plikÃ³w POSIX
 Name:		pax
 Version:	1.5
 Release:	7
@@ -20,9 +20,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 'pax' is the POSIX standard archive tool. It supports the two most
 common forms of standard Unix archive (backup) files - CPIO and TAR.
 
-%description -l pl
-'pax' jest standardowym narzêdziem archiwizuj±cym w standardzie POSIX.
-Obs³uguje dwie najczê¶ciej wystêpuj±ce na uniksach postaci archiwów:
+%description -l pl.UTF-8
+'pax' jest standardowym narzÄ™dziem archiwizujÄ…cym w standardzie POSIX.
+ObsÅ‚uguje dwie najczÄ™Å›ciej wystÄ™pujÄ…ce na uniksach postaci archiwÃ³w:
 CPIO i TAR.
 
 %prep
