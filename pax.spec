@@ -1,5 +1,5 @@
 Summary:	POSIX File System Archiver
-Summary(pl.UTF-8):   Archiwizer plików POSIX
+Summary(pl.UTF-8):	Archiwizer plików POSIX
 Name:		pax
 Version:	1.5
 Release:	7
