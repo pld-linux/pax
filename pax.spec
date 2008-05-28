@@ -1,3 +1,5 @@
+# TODO
+# - fedora has version 3.0 (at least in fc2)
 Summary:	POSIX File System Archiver
 Summary(pl.UTF-8):	Archiwizer plików POSIX
 Name:		pax
