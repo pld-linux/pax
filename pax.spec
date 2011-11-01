@@ -14,7 +14,8 @@ Source0:	ftp://ftp.debian.org/debian/pool/main/p/pax/%{name}_%{version}.orig.tar
 # Source0:	http://www.netsw.org/system/tools/fileutils/archive/meta/%{name}-%{version}.tar.gz
 # Patch0:		%{name}-1.5-rh.patch
 # Patch1:		%{name}-1.5-time.patch
-Patch0:		ftp://ftp.debian.org/debian/pool/main/p/%{name}_%{version}-12.diff.gz
+Patch0:		ftp://ftp.debian.org/debian/pool/main/p/pax/%{name}_%{version}-16.diff.gz
+# Patch0-md5:	87a045c3534345a0dc7cc3b07c53be04
 Patch1:		%{name}-DESTDIR_over_debian.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
