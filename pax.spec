@@ -8,13 +8,13 @@ Release:	7
 License:	BSD
 Group:		Applications/Archiving
 # debian version:
-Source0:	ftp://ftp.debian.org/debian/pool/main/p/pax/%{name}_%{version}.orig.tar.gz
+Source0:	http://ftp.debian.org/debian/pool/main/p/pax/%{name}_%{version}.orig.tar.gz
 # Source0-md5:	fc391481339c8222f40afae21b1188da
 # or original(?) archive from 1997:
 # Source0:	http://www.netsw.org/system/tools/fileutils/archive/meta/%{name}-%{version}.tar.gz
 # Patch0:		%{name}-1.5-rh.patch
 # Patch1:		%{name}-1.5-time.patch
-Patch0:		ftp://ftp.debian.org/debian/pool/main/p/pax/%{name}_%{version}-16.diff.gz
+Patch0:		http://ftp.debian.org/debian/pool/main/p/pax/%{name}_%{version}-16.diff.gz
 # Patch0-md5:	87a045c3534345a0dc7cc3b07c53be04
 Patch1:		%{name}-DESTDIR_over_debian.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
